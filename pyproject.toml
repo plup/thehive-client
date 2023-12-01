@@ -1,0 +1,12 @@
+[project]
+name = "thehive-client"
+version = "0.1.0"
+description = "A python client for a subset of TheHive API endpoints"
+authors = [
+    { name = "blueteam" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests"
+]

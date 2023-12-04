@@ -15,8 +15,12 @@ class ThehiveClient(requests.Session):
         return super().request(method, complete_url, *args, **kwargs)
 
     def get_case_link(self, case_id):
-        """Return a link to access the case from its id."""
+        """Return a link to access the case in the WebUI."""
         return urljoin(self.remote, f'cases/{case_id}/details')
+
+    def get_task_link(self, task_id, case_id):
+        """Return a link to access the task from WebUI."""
+        return urljoin(self.remote, f'cases/{case_id}/tasks/{task_id}')
 
     def get_tasks(self, open=None):
         data={
